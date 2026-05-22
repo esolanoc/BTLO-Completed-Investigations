@@ -10,7 +10,7 @@ Here, we are provided with the investigation files. We can see that the image of
 
 ## 📌Question # 1: When did Jane receive the malicious mail from an attacker pretending to be from IT Support? Check the web history to help us better timeline the series of events. (Format: YYYY-MM-DD HH:MM:SS UTC) 
 
-## 🕵️Jane apparently received a malicious email from an attacker impersonating an IT support staff member. Let's use Magnet AXIOM Examiner.
+Jane apparently received a malicious email from an attacker impersonating an IT support staff member. Let's use Magnet AXIOM Examiner.
 
 After analyzing the information and focusing on the browser history, we found that Jane did indeed receive the malicious email. However, the information is unclear, and we're not certain that this was the email where it all started.
 
