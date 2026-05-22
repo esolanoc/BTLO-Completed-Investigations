@@ -17,7 +17,10 @@ After analyzing the information and focusing on the browser history, we found th
 <img width="975" height="487" alt="imagen" src="https://github.com/user-attachments/assets/1eb5804b-1cb3-4526-8b40-2f21c7ca1ddf" />
 
 Let's analyze this record a little more in-depth using another forensic tool called Hindsight. We'll run the following command:
+
+<pre>
 C:\Users\BTLOTest\Desktop\Tools\Hindsight>hindsight.py -i "C:\Users\BTLOTest\Desktop\Investigation\Kape_Triage_Jane\C\Users\Jane\AppData\Local\Google\Chrome\User Data\Default" -o C:\Users\BTLOTest\Desktop\output
+</pre>
 
 <img width="975" height="399" alt="imagen" src="https://github.com/user-attachments/assets/b631db5b-279b-49b8-93f9-7668340283d5" />
 
