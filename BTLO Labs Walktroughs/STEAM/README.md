@@ -5,7 +5,7 @@
 Our content developer doesn't know how to start this forensic investigation but he said that he would just “Google it” when he got some time.
 He also didn't install Steam in the standard location! 
 
-##🕵️ We will analyze the triage artifacts from the internal user and investigate the different VM files images to detect the Policy Violation
+## 🕵️We will analyze the triage artifacts from the internal user and investigate the different VM files images to detect the Policy Violation
 
 In this case we are provided with the Steam evidence folder. We can see a few images from a virtual machine. We need to investigate them until we can find which one has the data we need to analyze.
 
