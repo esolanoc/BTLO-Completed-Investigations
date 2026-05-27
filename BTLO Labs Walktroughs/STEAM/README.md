@@ -12,4 +12,4 @@ In this case we are provided with the Steam evidence folder. We can see a few im
 <img width="901" height="507" alt="image" src="https://github.com/user-attachments/assets/3b2e56ce-5800-4d61-9ac0-c4e5cbae1a7a" />
 
 
-
+## 📌Question # 1: What are the two games installed by the user? [List in alphabetical order] (Format: AGame, BGame)
