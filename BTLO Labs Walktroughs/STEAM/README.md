@@ -57,7 +57,7 @@ As mentioned in Question 2, the same file used there can also be used to answer 
 
 <img width="975" height="720" alt="image" src="https://github.com/user-attachments/assets/91fdce63-0727-4872-99c8-1dd0b7fa1d74" />
 
-✅ Answer: 76561199466436896
+## ✅ Answer: 76561199466436896
 
 ## 📌 Question #6:  What is the persona, city, state, country, and real name for the user? (Format: persona, city, state, country, real name) (8 points)
 
@@ -67,13 +67,13 @@ Search it using a Steam-specific OSINT tool such as SteamIDFinder: https://steam
 
 <img width="786" height="738" alt="image" src="https://github.com/user-attachments/assets/d1ac7ea3-d4b9-40d3-bea9-831b9a504bce" />
 
-✅ Answer: moxielysi, Canberra, Australian Capital Territory, AU, puppacup
+## ✅ Answer: moxielysi, Canberra, Australian Capital Territory, AU, puppacup
 
 ## 📌 Question #7: What is the previous name of the account? (Format: Name) (4 points)
 
 The specific Steam profile had only one user, I  matched the name found in the directory path (/home/desi). 
 
-✅ Answer: desi
+## ✅ Answer: desi
 
 ## 📌 Question #8: What is the name of the most recent achievement and how is it achieved in the same game from Q4? (Format: AchievementName, yes/no) (10 points)
 
@@ -87,7 +87,7 @@ Steam achievements are usually stored under the userdata’s config directory
 
 <img width="1015" height="828" alt="image" src="https://github.com/user-attachments/assets/aed9f177-0962-4b35-97ca-e88d09cc57c6" />
 
-✅ Answer: What's stopping you?, yes
+## ✅ Answer: What's stopping you?, yes
 
 ## 📌 Question #9) It looks like the dog tried to hide what she was playing. Which directory did she perform anti-forensics on and what action did she do (select from MOVE|DELETE|COPY OVER|ADD FILES)? (Format: /full/directory/path, ACTION) (10 points)
 
@@ -97,7 +97,7 @@ After a while I was able to findthe following path
 
 <img width="858" height="832" alt="image" src="https://github.com/user-attachments/assets/7ec71a5a-ebc7-4725-b8e6-c956c85bad48" />
 
-✅ Answer: /home/desi/snap/steam/common/.local/share/Steam/steamapps/common, DELETE FILES
+## ✅ Answer: /home/desi/snap/steam/common/.local/share/Steam/steamapps/common, DELETE FILES
 
 
 
