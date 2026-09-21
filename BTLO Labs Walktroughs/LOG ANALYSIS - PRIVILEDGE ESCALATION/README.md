@@ -63,6 +63,12 @@ Checking the file we can clearly see CLI commands that were executed during the 
 
 ## ✅ Answer:  daniel
 
+<details>
+<summary>Answer</summary>
+
+✅ daniel
+</details>
+
 ---
 
 ## 📌Question #2: What script did the attacker try to download to the server?
