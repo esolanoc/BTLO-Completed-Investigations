@@ -16,10 +16,13 @@ Wrong PHP file website configuration
 
 # Recommendation:
 Removed privilege access to other users
+
 Review any other host to make sure the malicious actor did not move to another system 
-Monitor processes of evidence of persistence 
+
+Monitor processes for  evidence of persistence 
 
 # Investigation Walkthrough:
+
 Initial Access: Attacker leveraged file upload bypass using .phtml extension to gain code execution.
 
 Privilege Escalation: Exploited misconfiguration in python binary with SUID bit to escalate to root.
