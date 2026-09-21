@@ -4,9 +4,48 @@ You’re the lead security analyst at Cerulean Inc., a respected manufacturer of
 
 ---
 
-# 🚨Alert
-In this scenario, the SIEM alerted the Production Department about suspicious RDP connections, specifically to the computer of user Jane (the department head). It was later determined that the attacks were malicious.
-## 🕵️We will analyze the triage artifacts on Jane's computer and investigate the RDP connections to detect a possible data exfiltration.
+Executive Summary
+On 2024-11-05, suspicious RDP connections were detected on the workstation of Jane (Production Department Head).
+The attacker leveraged a malicious email to gain initial access, escalated privileges due to misconfigured admin rights, and attempted data exfiltration via Google Drive.
+Artifacts confirm installation of unauthorized software (Slack) and exfiltration of sensitive documents related to Project Venus.
+
+Impact: Unauthorized access to production systems, leakage of confidential documents, and compromise of privileged accounts.
+Root Cause: Misconfigured admin rights and lack of email security awareness.
+
+# Recommendations:
+
+Remove unnecessary admin privileges.
+
+Strengthen email filtering and phishing awareness training.
+
+Monitor cloud storage usage for anomalous activity.
+
+---
+
+Investigation Walkthrough
+Initial Access: Malicious email received → 2024-11-05 20:45:03 UTC
+
+Persistence: Admin rights misconfiguration (Jane as Database Specialist with Admin privileges)
+
+Exfiltration: Google Drive used for data transfer (ITM ID: IF001.001)
+
+Suspicious Software: Slack installed → 2024-11-05 20:08:55 UTC
+
+C2/Communication: Unauthorized Slack workspace → https://ceruleaninc.slack.com/
+
+RDP Connection: Origin IP → 104[.]203[.]174[.]169 at 11/5/2024 8:58:38 PM UTC
+
+Data Leaked: Energy Storage, Research, Solar Panel Tech, Wind Turbine Design
+
+🧾 Indicators of Compromise (IOCs)
+Category	Indicator	Notes
+Email	2024-11-05 20:45:03 UTC	Malicious IT Support phishing email
+IP Address	104[.]203[.]174[.]169	Origin of RDP connection
+Domain	ceruleaninc.slack.com	Unauthorized Slack workspace
+File Names	Energy Storage, Research, Solar Panel Tech, Wind Turbine Design	Exfiltrated Project Venus docs
+Software	Slack (Installed 2024-11-05 20:08:55 UTC)	Unauthorized communication tool
+
+---
 
 Here, we are provided with the investigation files. We can see that the image of Jane's computer was extracted using the KAPE tool, and a preliminary report was generated with the Magnet AXIOM Examiner tool(a comprehensive digital forensics platform designed to acquire, analyze, and report electronic evidence from computers, mobile devices, and cloud services).
 
