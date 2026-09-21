@@ -1,6 +1,48 @@
-## Scenario
+# Scenario
 
 A server with sensitive data was accessed by an attacker and the files were posted on an underground forum. This data was only available to a privileged user, in this case the ‘root’ account. Responders say ‘www-data’ would be the logged in user if the server was remotely accessed, and this user doesn’t have access to the data. The developer stated that the server is hosting a PHP-based website and that proper filtering is in place to prevent php file uploads to gain malicious code execution. The bash history is provided to you but the recorded commands don’t appear to be related to the attack. Can you find what actually happened?
+
+---
+
+# Executive Summary:
+
+Exfiltration data was performed on one of the servers, the server has a on PHP web site where developers secured it to prevent  php file uploads to gain malicious code execution, however when the bash was reviewed, they realized the attack was not to inject malicious code but a privilege escalation happened so the ser was able to get information about the server.
+
+# Impact:
+Unauthorized access to a server, leakage of confidential documents, privilege escalation.
+
+# Root Caused: 
+Wrong PHP file website configuration
+
+# Recommendation:
+Removed privilege access to other users
+Review any other host to make sure the malicious actor did not move to another system 
+Monitor processes of evidence of persistence 
+
+# Investigation Walkthrough:
+Initial Access: Attacker leveraged file upload bypass using .phtml extension to gain code execution.
+
+Privilege Escalation: Exploited misconfiguration in python binary with SUID bit to escalate to root.
+
+Persistence: Commands in bash history show attempts to maintain access, but attacker later removed traces (deleted PHP shell).
+
+Reconnaissance: Used whoami, pwd, and tcpdump to confirm privileges and analyze network traffic.
+
+Suspicious User: Presence of non-root user daniel discovered in system.
+
+Malicious Script: Attempted download of linux-exploit-suggester.sh into /tmp directory.
+
+Data Exfiltration: Sensitive files accessed with root privileges and later posted on underground forums.
+
+# Indicators of Compromise (IOCs):
+
+| Category        | Indicator                   | Notes                                                   |
+|-----------------|-----------------------------|---------------------------------------------------------|
+| User Account    | daniel                      | Non-root user present on server                         |
+| Script          | linux-exploit-suggester.sh  | Malicious script downloaded to /tmp                     |
+| Tool            | tcpdump                     | Used for packet capture and network analysis            |
+| File Extension  | .phtml                      | Used to bypass PHP upload filter                        |
+| Binary Misconfig| python (SUID)               | Exploited to escalate privileges to root                |
 
 ---
 
