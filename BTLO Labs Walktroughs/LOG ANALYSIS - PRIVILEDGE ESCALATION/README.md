@@ -77,7 +77,13 @@ We can notice a normal behavior when malicious actors move to the tmp folder to 
 
 <img width="674" height="242" alt="image" src="https://github.com/user-attachments/assets/82d8a7a0-f166-42a8-96cb-f5529343716a" />
 
-## ✅ Answer: linux-exploit-suggester.sh
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ linux-exploit-suggester.sh
+</details>
 
 ---
 
@@ -87,7 +93,13 @@ We see tcpdump command, this can confirm the use of tcpdump to analyze network p
 
 <img width="490" height="274" alt="image" src="https://github.com/user-attachments/assets/42d26ba5-98aa-4d93-bd1c-447ddceb2eff" />
 
-## ✅ Answer: tcpdump
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ tcpdump
+</details>
 
 ---
 
@@ -97,7 +109,13 @@ The malicious actor ran a the following command to exploit a vulnerability, we c
 
 <img width="561" height="199" alt="image" src="https://github.com/user-attachments/assets/eb2d2c27-a009-4044-8e6f-005d88a6d182" />
 
-## ✅ Answer: .phtml
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ .phtml
+</details>
 
 ---
 
@@ -105,4 +123,10 @@ The malicious actor ran a the following command to exploit a vulnerability, we c
 
 One of tge commands used searches for files owned by root with the SUID bit set. SUID binaries allow the process to run with the owner's privileges (in this case, root) when executed.
 
-## ✅ Answer: 4
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ 4
+</details>
