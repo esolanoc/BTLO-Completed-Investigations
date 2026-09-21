@@ -41,12 +41,14 @@ Data Leaked: Energy Storage, Research, Solar Panel Tech, Wind Turbine Design
 
 # Indicators of Compromise (IOCs):
 
-Category	Indicator	Notes
-Email	2024-11-05 20:45:03 UTC	Malicious IT Support phishing email
-IP Address	104[.]203[.]174[.]169	Origin of RDP connection
-Domain	ceruleaninc.slack.com	Unauthorized Slack workspace
-File Names	Energy Storage, Research, Solar Panel Tech, Wind Turbine Design	Exfiltrated Project Venus docs
-Software	Slack (Installed 2024-11-05 20:08:55 UTC)	Unauthorized communication tool
+| Category   | Indicator                          | Notes                                  |
+|:-----------|:----------------------------------:|---------------------------------------:|
+| Email      | 2024-11-05 20:45:03 UTC            | Malicious IT Support phishing email    |
+| IP Address | 104[.]203[.]174[.]169              | Origin of RDP connection               |
+| Domain     | ceruleaninc.slack.com              | Unauthorized Slack workspace           |
+| File Names | Energy Storage, Research, Solar Panel Tech, Wind Turbine Design | Exfiltrated Project Venus docs |
+| Software   | Slack (Installed 2024-11-05 20:08:55 UTC) | Unauthorized communication tool |
+
 
 ---
 
