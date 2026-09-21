@@ -61,10 +61,8 @@ Checking the file we can clearly see CLI commands that were executed during the 
 
 <img width="649" height="391" alt="image" src="https://github.com/user-attachments/assets/108b94ae-975f-47f8-9122-d9256c907632" />
 
-## ✅ Answer:  daniel
-
 <details>
-<summary>Answer</summary>
+<summary># Answer</summary>
 
 ✅ daniel
 </details>
