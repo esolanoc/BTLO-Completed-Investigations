@@ -83,7 +83,12 @@ Let's filter by the URL we found earlier using Magnet AXIOM Examiner to confirm 
 
 <img width="975" height="190" alt="imagen" src="https://github.com/user-attachments/assets/f64d0395-f8e0-4f03-b4ef-d8fe625368bd" />
 
-# ✅ Answer: 2024-11-05 20:45:03 UTC
+---
+<details>
+<summary>Answer</summary>
+
+# ✅ 2024-11-05 20:45:03 UTC
+</details>
 
 ---
 
@@ -93,7 +98,13 @@ The attacker, immediately after connecting via RDP, attempted to log in to other
 
 <img width="975" height="524" alt="imagen" src="https://github.com/user-attachments/assets/de9f00e1-8b6a-4f2f-8c6f-05b1c7e9fcba" />
 
-# ✅ Answer: Google Drive
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ Google Drive
+</details>
 
 ---
 
@@ -104,7 +115,13 @@ Reviewing the ITM (Insider Threat Matrix) to understand the attacker's actions, 
 
 <img width="975" height="503" alt="imagen" src="https://github.com/user-attachments/assets/391938a1-af1a-475f-8dfc-a01a0d749f0a" />
 
-# ✅ Answer: IF001.001
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ IF001.001
+</details>
 
 ---
 
@@ -114,7 +131,13 @@ Reviewing the ITM (Insider Threat Matrix) to understand the attacker's actions, 
 
 <img width="975" height="289" alt="imagen" src="https://github.com/user-attachments/assets/e70ede74-d716-4589-b450-0653b284ff22" />
 
-# ✅ Answer: MSFT Admin (Database Specialist)
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ MSFT Admin (Database Specialist)
+</details>
 
 ---
 
@@ -124,13 +147,25 @@ Jane downloaded Slack, a channel-based messaging tool designed for work teams. T
 
 <img width="975" height="431" alt="imagen" src="https://github.com/user-attachments/assets/4bf15719-fb78-4699-908a-763971165361" />
 
-# ✅ Answer: 2024-11-05 20:08:55 UTC
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ 2024-11-05 20:08:55 UTC
+</details>
 
 ---
 
 #📌Question # 6: There is enough evidence of Slack being used on Jane’s machine. Can you provide the unofficial URL being utilized for communication? (Format: hxxps://url.tld)
 
-# ✅ Answer: https://ceruleaninc.slack.com/
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ https://ceruleaninc.slack.com/
+</details>
 
 ---
 
@@ -140,7 +175,13 @@ With this information, we can now determine the exact time the RDP connection wa
 
 <img width="975" height="382" alt="imagen" src="https://github.com/user-attachments/assets/1a587a03-36d8-42e0-8bae-fd0eebda6a43" />
 
-# ✅ Answer: 11/5/2024 8:58:38 PM UTC, 104[.]203[.]174[.]169	
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ 11/5/2024 8:58:38 PM UTC, 104[.]203[.]174[.]169	
+</details>
 
 ---
 
@@ -150,6 +191,13 @@ Finally, we can see that the attacker managed to extract the following files fro
 
 <img width="975" height="508" alt="imagen" src="https://github.com/user-attachments/assets/dafd096f-3c17-44e7-acc6-4c63c0bf67b4" />
 
-# ✅ Answer: Energy Storage, Research, Solar Panel Tech, Wind Turbine Design
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ Energy Storage, Research, Solar Panel Tech, Wind Turbine Design
+</details>
+
 
 
