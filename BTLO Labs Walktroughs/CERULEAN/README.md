@@ -10,8 +10,8 @@ On 2024-11-05, suspicious RDP connections were detected on the workstation of Ja
 The attacker leveraged a malicious email to gain initial access, escalated privileges due to misconfigured admin rights, and attempted data exfiltration via Google Drive.
 Artifacts confirm installation of unauthorized software (Slack) and exfiltration of sensitive documents related to Project Venus.
 
-Impact: Unauthorized access to production systems, leakage of confidential documents, and compromise of privileged accounts.
-Root Cause: Misconfigured admin rights and lack of email security awareness.
+## Impact: Unauthorized access to production systems, leakage of confidential documents, and compromise of privileged accounts.
+## Root Cause: Misconfigured admin rights and lack of email security awareness.
 
 # Recommendations:
 
