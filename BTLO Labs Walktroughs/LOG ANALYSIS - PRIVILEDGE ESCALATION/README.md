@@ -64,7 +64,7 @@ Checking the file we can clearly see CLI commands that were executed during the 
 <details>
 <summary># Answer</summary>
 
-✅ daniel
+✅ # daniel
 </details>
 
 ---
