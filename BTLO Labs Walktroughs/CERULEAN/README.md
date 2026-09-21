@@ -1,7 +1,4 @@
-# BTLO: Cerulean
-
-
-# 🛡️Scenario
+# Scenario
 
 You’re the lead security analyst at Cerulean Inc., a respected manufacturer of industrial control systems. Your SIEM alerts you to suspicious RDP connections to the Production Department—especially Jane’s PC (the head of the department). It was determined later on that the attacks were malicious. You are tasked to analyze the triage artifacts on her computer and investigate the RDP connections for possible exfiltration. 
 
@@ -19,7 +16,7 @@ Here, we are provided with the investigation files. We can see that the image of
 
 # 📌Question # 1: When did Jane receive the malicious mail from an attacker pretending to be from IT Support? Check the web history to help us better timeline the series of events. (Format: YYYY-MM-DD HH:MM:SS UTC) 
 
-🕵️Jane apparently received a malicious email from an attacker impersonating an IT support staff member. Let's use Magnet AXIOM Examiner.
+Jane apparently received a malicious email from an attacker impersonating an IT support staff member. Let's use Magnet AXIOM Examiner.
 
 After analyzing the information and focusing on the browser history, we found that Jane did indeed receive the malicious email. However, the information is unclear, and we're not certain that this was the email where it all started.
 
@@ -76,7 +73,7 @@ Reviewing the ITM (Insider Threat Matrix) to understand the attacker's actions, 
 
 # 📌Question # 5: It seems like she downloaded Slack before the RDP session. Our main point of communication is Teams, so this is strange. What is the installation date and time of this software? (Format: YYYY-MM-DD HH:MM:SS UTC) 
 
-🕵️Jane downloaded Slack, a channel-based messaging tool designed for work teams. This raised many suspicions since the organization uses Teams. The download of the application is shown here.
+Jane downloaded Slack, a channel-based messaging tool designed for work teams. This raised many suspicions since the organization uses Teams. The download of the application is shown here.
 
 <img width="975" height="431" alt="imagen" src="https://github.com/user-attachments/assets/4bf15719-fb78-4699-908a-763971165361" />
 
@@ -92,7 +89,7 @@ Reviewing the ITM (Insider Threat Matrix) to understand the attacker's actions, 
 
 # 📌Question # 7: Provide the initial time and Origin IP Address for the RDP connections to Jane’s workstation. (Format: MM/D/YYYY H:MM:SSS XX UTC, XXX[.]XXX[.]XXX[.]XXX) 
 
-🕵️With this information, we can now determine the exact time the RDP connection was initiated from Jnae's machine and the IP address used.
+With this information, we can now determine the exact time the RDP connection was initiated from Jnae's machine and the IP address used.
 
 <img width="975" height="382" alt="imagen" src="https://github.com/user-attachments/assets/1a587a03-36d8-42e0-8bae-fd0eebda6a43" />
 
@@ -102,7 +99,7 @@ Reviewing the ITM (Insider Threat Matrix) to understand the attacker's actions, 
 
 # 📌Question # 8: Our Project Venus plans were leaked, triggering the defenses. What are the four documents in alphabetical order? (Hint: examine the Windows Defender Logs) (Tip: remove 'project venus' and 'cerulean' from the document names). (Format: Doc1, Doc2, Doc3, Doc4)
 
-🕵️Finally, we can see that the attacker managed to extract the following files from the Windows Defender Logs.
+Finally, we can see that the attacker managed to extract the following files from the Windows Defender Logs.
 
 <img width="975" height="508" alt="imagen" src="https://github.com/user-attachments/assets/dafd096f-3c17-44e7-acc6-4c63c0bf67b4" />
 
