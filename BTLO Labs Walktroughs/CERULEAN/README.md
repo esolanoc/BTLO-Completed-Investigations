@@ -1,7 +1,7 @@
-# 🛡️BTLO: Cerulean
+# BTLO: Cerulean
 
 
-# Scenario
+# 🛡️Scenario
 
 You’re the lead security analyst at Cerulean Inc., a respected manufacturer of industrial control systems. Your SIEM alerts you to suspicious RDP connections to the Production Department—especially Jane’s PC (the head of the department). It was determined later on that the attacks were malicious. You are tasked to analyze the triage artifacts on her computer and investigate the RDP connections for possible exfiltration. 
 
