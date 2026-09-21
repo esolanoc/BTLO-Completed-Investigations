@@ -4,7 +4,8 @@ You’re the lead security analyst at Cerulean Inc., a respected manufacturer of
 
 ---
 
-Executive Summary
+# Executive Summary:
+
 On 2024-11-05, suspicious RDP connections were detected on the workstation of Jane (Production Department Head).
 The attacker leveraged a malicious email to gain initial access, escalated privileges due to misconfigured admin rights, and attempted data exfiltration via Google Drive.
 Artifacts confirm installation of unauthorized software (Slack) and exfiltration of sensitive documents related to Project Venus.
@@ -22,7 +23,8 @@ Monitor cloud storage usage for anomalous activity.
 
 ---
 
-Investigation Walkthrough
+# Investigation Walkthrough:
+
 Initial Access: Malicious email received → 2024-11-05 20:45:03 UTC
 
 Persistence: Admin rights misconfiguration (Jane as Database Specialist with Admin privileges)
@@ -37,7 +39,8 @@ RDP Connection: Origin IP → 104[.]203[.]174[.]169 at 11/5/2024 8:58:38 PM UTC
 
 Data Leaked: Energy Storage, Research, Solar Panel Tech, Wind Turbine Design
 
-🧾 Indicators of Compromise (IOCs)
+# Indicators of Compromise (IOCs):
+
 Category	Indicator	Notes
 Email	2024-11-05 20:45:03 UTC	Malicious IT Support phishing email
 IP Address	104[.]203[.]174[.]169	Origin of RDP connection
