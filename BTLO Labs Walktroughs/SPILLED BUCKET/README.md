@@ -35,7 +35,7 @@ Compromised EC2 Instances:
 
 ---
 
-## ⚠️ Impact
+# Impact
 - **Data Exfiltration**: Sensitive objects downloaded from S3.  
 - **Persistence**: Creation of IAM users and keys with attached policies.  
 - **Privilege Escalation**: Use of IAM roles to expand access.  
@@ -43,7 +43,7 @@ Compromised EC2 Instances:
 
 ---
 
-## 🛠️ Recommendations
+# Recommendations
 - Implement **Cloud Security Posture Management (CSPM)** to detect misconfigurations.  
 - Enable **MFA** and enforce periodic IAM key rotation.  
 - Configure **AWS Config + GuardDuty** for real-time alerts.  
@@ -52,7 +52,7 @@ Compromised EC2 Instances:
 
 ---
 
-# 📌 IOCs (Indicators of Compromise)
+#  IOCs (Indicators of Compromise)
 
 | Category        | Indicator                                      | Notes                                      |
 |-----------------|-----------------------------------------------|--------------------------------------------|
