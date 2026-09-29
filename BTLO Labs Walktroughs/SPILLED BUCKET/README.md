@@ -140,9 +140,10 @@ For this I selected the bucketname and the Paremeterkey which is the object that
 # Question #4 Based on the previous question, what is the software associated with the file?
 
 ---
+
 Here what I did was a little of google search to know if there is a specific software
 
-<img width="749" height="755" alt="image" src="https://github.com/user-attachments/assets/58e04993-6e6a-4da6-8f2e-0276541e63c6" />
+<img width="1265" height="906" alt="image" src="https://github.com/user-attachments/assets/1558bb11-7e48-4ca9-81f9-2dcb0442ace3" />
 
 ---
 
