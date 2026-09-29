@@ -1,88 +1,84 @@
-# ☁️ Cloud Attack Investigation – Scenario & Q&A
-
-## Scenario
+# Scenario
 Due to a sudden boom in Cloud services, a recently formed Australian-based company shifted from On-Prem to Cloud infrastructure. While moving to the Cloud, they unknowingly had a few misconfigurations, which a group of hackers leveraged to attack them. The attackers were successful in attacking and gaining access to their infrastructure. The company does not have an IR team ready to perform cloud-based investigations. They also said they manage their Cloud from Browser only, no CLI was configured.  
 
 The investigation starts using Splunk server. We need to make sure what are our source types that are going to provide us with the data that we are going to analyze. Once we confirmed the sourcetype, we can start searching.  
 
 ---
-# 🛡️ Executive Summary – Cloud Attack Investigation
 
-## 📌 Context
-Una empresa australiana recién migrada a infraestructura Cloud sufrió un ataque debido a **misconfiguraciones críticas** en sus servicios.  
-Los atacantes aprovecharon accesos inseguros y lograron comprometer múltiples recursos en AWS.  
-La investigación se realizó utilizando **Splunk** como plataforma de análisis, apoyándose en **CloudTrail** y **VPC Flow Logs**.
+# Executive Summary – Cloud Attack Investigation
+
+An Australian company that recently migrated to Cloud infrastructure suffered an attack due to **critical misconfigurations** in its services.  
+Attackers exploited insecure access and successfully compromised multiple AWS resources.  
+The investigation was conducted using **Splunk** as the analysis platform, leveraging **CloudTrail** and **VPC Flow Logs**.
 
 ---
 
-## 🔎 Key Findings
+# Investigation Walkthrough:
 
-### Initial Access
-- El atacante accedió al bucket **developers-configuration**.  
-- IP maliciosa identificada: **18[.]216[.]138[.]52**.  
+Initial Access:
+- Attacker accessed the bucket **developers-configuration**.  
+- Malicious IP identified: **18[.]216[.]138[.]52**.  
 
-### Credential Exposure
-- Objeto descargado: **VPN-Profiles/DevelopersProfile_wg0.conf**.  
-- Software asociado: **WireGuard**.  
-- El atacante filtró su propia IP al conectarse: **122[.]161[.]49[.]105**.  
+Credential Exposure:
+- Object downloaded: **VPN-Profiles/DevelopersProfile_wg0.conf**.  
+- Associated software: **WireGuard**.  
+- Attacker leaked his own IP when connecting: **122[.]161[.]49[.]105**.  
 
-### Compromised EC2 Instances
-- Conexión inicial a instancia privada: **10.0.1.125**.  
-- Enumeración de roles IAM → **arn:aws:iam::764581110688:role/ec2-role**.  
-- Persistencia lograda mediante APIs: **CreateUser → CreateAccessKey → AttachUserPolicy**.  
-- Identidad creada: **web_engg_2**.  
-- Política asociada: *(Policy ARN identificado en logs)*.  
-- Acceso adicional vía SSH a instancia privada: **10.0.2.32**.  
-- Reverse shell detectado hacia atacante en puerto sospechoso.  
+Compromised EC2 Instances:
+- Initial connection to private instance: **10.0.1.125**.  
+- IAM role enumeration → **arn:aws:iam::764581110688:role/ec2-role**.  
+- Persistence achieved via APIs: **CreateUser → CreateAccessKey → AttachUserPolicy**.  
+- Identity created: **web_engg_2**.  
+- Policy attached: *(Policy ARN identified in logs)*.  
+- Additional SSH access to private instance: **10.0.2.32**.  
+- Reverse shell detected to attacker on suspicious port.  
 
 ---
 
 ## ⚠️ Impact
-- **Data Exfiltration**: Descarga de objetos sensibles desde S3.  
-- **Persistence**: Creación de usuarios y llaves IAM con políticas adjuntas.  
-- **Privilege Escalation**: Uso de roles IAM para ampliar acceso.  
-- **Infrastructure Compromise**: Conexión a múltiples instancias EC2 y establecimiento de reverse shell.  
+- **Data Exfiltration**: Sensitive objects downloaded from S3.  
+- **Persistence**: Creation of IAM users and keys with attached policies.  
+- **Privilege Escalation**: Use of IAM roles to expand access.  
+- **Infrastructure Compromise**: Multiple EC2 instances accessed and reverse shell established.  
 
 ---
 
 ## 🛠️ Recommendations
-- Implementar **Cloud Security Posture Management (CSPM)** para detectar misconfiguraciones.  
-- Activar **MFA** y rotación periódica de llaves IAM.  
-- Configurar **AWS Config + GuardDuty** para alertas en tiempo real.  
-- Limitar accesos a buckets S3 mediante políticas de **least privilege**.  
-- Establecer un **Incident Response Playbook** para entornos Cloud.  
+- Implement **Cloud Security Posture Management (CSPM)** to detect misconfigurations.  
+- Enable **MFA** and enforce periodic IAM key rotation.  
+- Configure **AWS Config + GuardDuty** for real-time alerts.  
+- Restrict S3 bucket access using **least privilege policies**.  
+- Establish a **Cloud Incident Response Playbook**.  
 
+---
 
-
-
-
-
-
-
-# IOCs (Indicators of Compromise)
+# 📌 IOCs (Indicators of Compromise)
 
 | Category        | Indicator                                      | Notes                                      |
 |-----------------|-----------------------------------------------|--------------------------------------------|
-| S3 Bucket       | developers-configuration                      | Bucket accedido por el atacante             |
-| Attacker IP     | 18[.]216[.]138[.]52                           | IP asociada al acceso S3                    |
-| Object/File     | VPN-Profiles/DevelopersProfile_wg0.conf       | Archivo descargado desde S3                 |
-| Software        | WireGuard                                     | Software asociado al archivo de configuración|
-| Attacker IP     | 122[.]161[.]49[.]105                          | IP filtrada al conectarse vía WireGuard     |
-| EC2 Instance    | 10.0.1.125                                    | Instancia privada comprometida              |
-| IAM Role ARN    | arn:aws:iam::764581110688:role/ec2-role       | Rol enumerado por el atacante               |
-| IAM APIs        | CreateUser, CreateAccessKey, AttachUserPolicy | APIs usadas para persistencia               |
-| IAM Identity    | web_engg_2                                    | Usuario IAM creado                          |
-| Policy ARN      | (Identificado en logs)                        | Política adjunta al usuario                 |
-| EC2 Instance    | 10.0.2.32                                     | Instancia accedida vía SSH                  |
-| Reverse Shell   | (Attacker IP, Port)                           | Conexión reverse shell detectada            |
+| S3 Bucket       | developers-configuration                      | Bucket accessed by attacker                 |
+| Attacker IP     | 18[.]216[.]138[.]52                           | IP associated with S3 access                |
+| Object/File     | VPN-Profiles/DevelopersProfile_wg0.conf       | File downloaded from S3                     |
+| Software        | WireGuard                                     | Software linked to configuration file       |
+| Attacker IP     | 122[.]161[.]49[.]105                          | IP leaked via WireGuard connection          |
+| EC2 Instance    | 10.0.1.125                                    | Compromised private instance                |
+| IAM Role ARN    | arn:aws:iam::764581110688:role/ec2-role       | Role enumerated by attacker                 |
+| IAM APIs        | CreateUser, CreateAccessKey, AttachUserPolicy | APIs used for persistence                   |
+| IAM Identity    | web_engg_2                                    | IAM user created                            |
+| Policy ARN      | (Identified in logs)                          | Policy attached to IAM user                 |
+| EC2 Instance    | 10.0.2.32                                     | Instance accessed via SSH                   |
+| Reverse Shell   | (Attacker IP, Port)                           | Reverse shell connection detected           |
 
 
-## Q&A
+---
 
-### Question #1  
-**Which S3 bucket's object was accessed by the attacker?**  
-**Answer:** developers-configuration  
+# Question #1 Which S3 bucket's object was accessed by the attacker?
+  
+<details>
+<summary>Answer</summary>
 
+# ✅ developers-configuration
+</details>
 ---
 
 ### Question #2  
