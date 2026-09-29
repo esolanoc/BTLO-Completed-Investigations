@@ -73,12 +73,23 @@ Compromised EC2 Instances:
 ---
 
 # Question #1 Which S3 bucket's object was accessed by the attacker?
-  
+
+---
+I went through all interesting fields and notice “eventName” this contains two events that called my attention “GetObject” and ListObject’ this means the attacker performed some interaction by listing or downloading a specific object withing the AWS cloud
+
+
+Then if we check for  requestParameters.bucketName we can identify the name
+
+<img width="1344" height="397" alt="image" src="https://github.com/user-attachments/assets/67c65e90-4399-4ffd-bebf-e968fe75e1fd" />
+
+---
+
 <details>
 <summary>Answer</summary>
 
 # ✅ developers-configuration
 </details>
+
 ---
 
 ### Question #2  
