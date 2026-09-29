@@ -243,20 +243,55 @@ Using the sa,e exatc search before and cheking at the raw data and going to the 
  
 ---
 
-# Question #10 
-**What policy was attached to the Identity later? Provide the policy ARN.**  
-**Answer:** (Identificado en logs)  
+# Question #10 What policy was attached to the Identity later? Provide the policy ARN.
+
+---
+Here I used the same filter before but I modify th eeventName field to show policy API, then I search for policy to get the name
+
+<img width="1336" height="413" alt="image" src="https://github.com/user-attachments/assets/2fd29501-bb60-46e4-a8d9-de5ec949194a" />
 
 ---
 
-### Question #11  
-**Another EC2 instance was found to be accessed by the Attacker using SSH. Find its Private IP Address.**  
-**Answer:** 10.0.2.32  
+<details>
+<summary>Answer</summary>
+
+# ✅  arn:aws:iam::aws:policy/AdministratorAccess 
+</details>  
+
 
 ---
 
-### Question #12  
-**From the above EC2 instance, attacker then created a reverse shell. Find the Reverse Shell IP & port. [Defanged IP]**  
-**Answer:** (Attacker IP, Port)  
+# Question #11 Another EC2 instance was found to be accessed by the Attacker using SSH. Find its Private IP Address.
+
+---
+
+I know that SSH runs ono port 22, so I used VPC sourcetype and filter by port 22 then I count by srcaddr and dstaddr to see what privtae IP was connecting to port 22
+
+<img width="1363" height="642" alt="image" src="https://github.com/user-attachments/assets/5a168c06-2929-4ac2-9889-5c4bd4b61098" />
+
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅  10.0.2.32  
+</details>  
+
+---
+
+# Question #12 From the above EC2 instance, attacker then created a reverse shell. Find the Reverse Shell IP & port. [Defanged IP]
+
+---
+I used the above isntance to filter by that srcaddr, I found results for port 443, 80, 123 that doesn’t have to o with reverse shell, so only two records were found
+
+<img width="1355" height="621" alt="image" src="https://github.com/user-attachments/assets/4d2249d7-093b-4922-84c0-58f95076bb40" />
+
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅  3[.]15[.]209[.]50, 13337
+</details>  (Attacker IP, Port)  
 
 ---
