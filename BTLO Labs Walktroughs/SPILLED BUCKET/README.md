@@ -142,7 +142,7 @@ For this I selected the bucketname and the Paremeterkey which is the object that
 ---
 Here what I did was a little of google search to know if there is a specific software
 
-<img width="1361" height="464" alt="image" src="https://github.com/user-attachments/assets/1a99f521-d6be-4bf4-b4db-2d8f6cd3a5c9" />
+<img width="749" height="755" alt="image" src="https://github.com/user-attachments/assets/58e04993-6e6a-4da6-8f2e-0276541e63c6" />
 
 ---
 
