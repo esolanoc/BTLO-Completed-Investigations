@@ -70,6 +70,14 @@ Compromised EC2 Instances:
 | Reverse Shell   | (Attacker IP, Port)                           | Reverse shell connection detected           |
 
 
+The investigation starts using splunk server, we need to make sure what are our source types that are going to provide us with the data that we are going to analyze
+
+<img width="1365" height="738" alt="image" src="https://github.com/user-attachments/assets/bd32699d-3ed9-4300-bfa3-28761faa9ce3" />
+
+Once we confirmed the sourcetype, we can start or searching. I added S3 bucket to the search and I immediately see a few amount of events.
+
+<img width="1352" height="730" alt="image" src="https://github.com/user-attachments/assets/d5257bc8-46c3-4403-937d-0e2d3205dfe4" />
+
 ---
 
 # Question #1 Which S3 bucket's object was accessed by the attacker?
