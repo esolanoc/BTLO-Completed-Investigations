@@ -5,7 +5,7 @@ The investigation starts using Splunk server. We need to make sure what are our 
 
 ---
 
-# Executive Summary – Cloud Attack Investigation
+# Executive Summary:
 
 An Australian company that recently migrated to Cloud infrastructure suffered an attack due to **critical misconfigurations** in its services.  
 Attackers exploited insecure access and successfully compromised multiple AWS resources.  
