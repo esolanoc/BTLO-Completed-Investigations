@@ -1,6 +1,6 @@
 ⚡BTLO Completed Investigations (Retired)
 
-🚀 A collection of forensic investigations and technical reports conducted in BTLO laboratory environments.
+🚀 A collection of Blue Team investigations/challenges and technical reports conducted in BTLO laboratory environments.
 
 <div style="border:2px solid #4CAF50; border-radius:10px; padding:15px; background:#f9f9f9; font-family:Arial, sans-serif; text-align:center;">
 
