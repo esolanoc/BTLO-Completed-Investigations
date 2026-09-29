@@ -69,6 +69,7 @@ Compromised EC2 Instances:
 | EC2 Instance    | 10.0.2.32                                     | Instance accessed via SSH                   |
 | Reverse Shell   | (Attacker IP, Port)                           | Reverse shell connection detected           |
 
+---
 
 The investigation starts using splunk server, we need to make sure what are our source types that are going to provide us with the data that we are going to analyze
 
@@ -100,55 +101,149 @@ Then if we check for  requestParameters.bucketName we can identify the name
 
 ---
 
-### Question #2  
-**What was the attacker IP associated in S3 access? [Defanged IP]**  
-**Answer:** 18[.]216[.]138[.]52  
+# Question #2 What was the attacker IP associated in S3 access? [Defanged IP]
 
 ---
 
-### Question #3  
-**What object/file did the attacker then access/download that would allow access to their environment?**  
-**Answer:** VPN-Profiles/DevelopersProfile_wg0.conf  
+With our last searched, we saw two potential IP’s , if we filter by userIdentity we can see that there is one IP that doesn’t belong to an user, in this case the malicious actor
+
+<img width="1339" height="506" alt="image" src="https://github.com/user-attachments/assets/d077183a-6a3d-40e5-94d6-549daf245ab0" />
 
 ---
 
-### Question #4  
-**Based on the previous question, what is the software associated with the file?**  
-**Answer:** wireguard  
+<details>
+<summary>Answer</summary>
+
+# ✅ 18[.]216[.]138[.]52  
+</details>
 
 ---
 
-### Question #5  
-**Using the previously mentioned file, one of the attackers accidentally connected via main system leading to his IP address getting leaked. What is the IP address of the Attacker? [Defanged IP]**  
-**Answer:** 122[.]161[.]49[.]105  
+# Question #3 What object/file did the attacker then access/download that would allow access to their environment?
+---
+
+
+For this I selected the bucketname and the Paremeterkey which is the object that the attacker tried to read 
+
+<img width="1361" height="464" alt="image" src="https://github.com/user-attachments/assets/2ba5c3a4-5e4f-4c96-8191-cbf133f44956" />
 
 ---
 
-### Question #6  
-**What was the Private IP of the EC2 instance to which the attacker connected?**  
-**Answer:** 10.0.1.125  
+<details>
+<summary>Answer</summary>
+
+# ✅ VPN-Profiles/DevelopersProfile_wg0.conf   
+</details>
 
 ---
 
-### Question #7  
-**The attacker performed further enumeration while being inside the EC2 instance and found a role that could be used further by assuming it. What was the ARN of the role?**  
-**Answer:** arn:aws:iam::764581110688:role/ec2-role  
+# Question #4 Based on the previous question, what is the software associated with the file?
+
+---
+Here what I did was a little of google search to know if there is a specific software
+
+<img width="1361" height="464" alt="image" src="https://github.com/user-attachments/assets/1a99f521-d6be-4bf4-b4db-2d8f6cd3a5c9" />
 
 ---
 
-### Question #8  
-**Using the role Attacker targeted IAM to achieve persistence in the environment. Provide the APIs used for it in order of its usage.**  
-**Answer:** CreateUser, CreateAccessKey, AttachUserPolicy  
+<details>
+<summary>Answer</summary>
+
+# ✅ wireguard   
+</details>
 
 ---
 
-### Question #9  
-**Provide the name of the IAM Identity created during Persistence.**  
-**Answer:** web_engg_2  
+# Question #5 Using the previously mentioned file, one of the attackers accidentally connected via main system leading to his IP address getting leaked. What is the IP address of the Attacker? [Defanged IP]
 
 ---
 
-### Question #10  
+I had to research about wireguard and checking the config file I saw the file make connections to a specific port 51820. I used the sourcetyoe VPC flow to check for network connections and I was able to identified the IP that make connections to that port
+
+<img width="1258" height="399" alt="image" src="https://github.com/user-attachments/assets/9c678029-9140-44fb-aa3d-727f064240cd" />
+
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ 122[.]161[.]49[.]105 
+</details>   
+
+---
+
+# Question #6 What was the Private IP of the EC2 instance to which the attacker connected?
+
+---
+Here we can use the same search and just add destination address to know here the IP is connecting to
+
+<img width="1298" height="391" alt="image" src="https://github.com/user-attachments/assets/66419dd6-7d2b-4fef-b139-8f44e08b2cec" />
+
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ 10.0.1.125
+</details>      
+
+---
+
+# Question #7 The attacker performed further enumeration while being inside the EC2 instance and found a role that could be used further by assuming it. What was the ARN of the role?
+
+---
+
+I searched CloudTrail for the role activity, to get a good view of the roles the attacker was working with.
+
+<img width="1353" height="452" alt="image" src="https://github.com/user-attachments/assets/a8aabac6-ddfc-441c-83e0-da1a2ae09e6d" />
+
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ arn:aws:iam::764581110688:role/ec2-role  
+</details>      
+
+---
+
+# Question #8 Using the role Attacker targeted IAM to achieve persistence in the environment. Provide the APIs used for it in order of its usage.
+
+---
+
+This was got me thinking I little, so I had to research about API persistence technicuqes and I learned that you should look for events related to the creation or modification of credentials, roles, users, and storage configurations. So I identified these and I used the following filter to find those API’s, once found I sort by event time to know the order of how this was applied
+
+<img width="1358" height="628" alt="image" src="https://github.com/user-attachments/assets/df594b79-4e5e-4647-a1c8-16cf27b0d65c" />
+
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅ CreateUser, CreateAccessKey, AttachUserPolicy
+</details>      
+   
+
+---
+
+# Question #9 Provide the name of the IAM Identity created during Persistence.
+
+---
+Using the sa,e exatc search before and cheking at the raw data and going to the CreateUser AP, we can find the user name that was created
+
+<img width="942" height="475" alt="image" src="https://github.com/user-attachments/assets/9e7e3349-4f9b-4285-8947-b88a7a6ca3bc" />
+
+---
+
+<details>
+<summary>Answer</summary>
+
+# ✅  web_engg_2  
+</details>  
+ 
+---
+
+# Question #10 
 **What policy was attached to the Identity later? Provide the policy ARN.**  
 **Answer:** (Identificado en logs)  
 
