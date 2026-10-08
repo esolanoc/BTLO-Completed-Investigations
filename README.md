@@ -29,4 +29,24 @@
 
 <img width="1818" height="707" alt="image" src="https://github.com/user-attachments/assets/7c43b7f2-050b-4d0f-ae68-7c9068b8068b" />
 
+---
 
+# 🔗 BTLO Walkthroughs Index
+
+Organized by category for quick access:
+
+# 🧪 Digital Forensics
+- [Cerulean BTLO](./DigitalForensics/Cerulean.md)
+- [Steam BTLO](./DigitalForensics/Steam.md)
+
+# 🎯 CTF
+- [Log Analysis – Privileged Escalation BTLO](./CTF/LogAnalysis_PrivEsc.md)
+
+# 🛡️ Security Operations
+- [Network Analysis – Malware Compromised BTLO](./SecOps/MalwareCompromised.md)
+- [Piggy BTLO](./SecOps/Piggy.md)
+- [Vortex BTLO](./SecOps/Vortex.md)
+
+# 🚨 Incident Response
+- [RottenCloud BTLO](./IncidentResponse/RottenCloud.md)
+- [Spilled Bucket BTLO](./IncidentResponse/SpilledBucket.md)
