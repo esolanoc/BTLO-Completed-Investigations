@@ -1,4 +1,4 @@
-#⚡BTLO Completed Investigations (Retired)
+# ⚡BTLO Completed Investigations (Retired)
 
 🚀 A collection of Blue Team investigations/challenges and technical reports conducted in BTLO laboratory environments.
 
