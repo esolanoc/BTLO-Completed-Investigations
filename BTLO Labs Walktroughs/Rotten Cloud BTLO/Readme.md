@@ -61,7 +61,7 @@ Website Defacement:
 
 | Type              | Value/Description |
 |-------------------|------------------|
-| Attacker IP (AWS) | `X.X.X.X` (CloudTrail) |
+| Attacker IP (AWS) | `[172].[235].[129].[221]` (CloudTrail) |
 | Recon API         | `DescribeInstances` |
 | Secret Access     | `GetSecretValue` → SecretID containing Windows password |
 | S3 Buckets        | 3 compromised buckets |
