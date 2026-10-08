@@ -1,4 +1,4 @@
-⚡BTLO Completed Investigations (Retired)
+#⚡BTLO Completed Investigations (Retired)
 
 🚀 A collection of Blue Team investigations/challenges and technical reports conducted in BTLO laboratory environments.
 
@@ -30,19 +30,19 @@
 
 Organized by category for quick access:
 
-# 🧪 Digital Forensics
+## 🧪 Digital Forensics
 - [Cerulean BTLO](https://github.com/esolanoc/BTLO-Completed-Investigations/tree/main/BTLO%20Labs%20Walktroughs/Cerulean%20BTLO)
 - [Steam BTLO](https://github.com/esolanoc/BTLO-Completed-Investigations/tree/main/BTLO%20Labs%20Walktroughs/Steam%20BTLO)
 
-# 🎯 CTF
+## 🎯 CTF
 - [Log Analysis – Privileged Escalation BTLO](https://github.com/esolanoc/BTLO-Completed-Investigations/tree/main/BTLO%20Labs%20Walktroughs/Log%20Analysis%20-%20Priviledge%20Escalation%20BTLO)
 
-# 🛡️ Security Operations
+## 🛡️ Security Operations
 - [Network Analysis – Malware Compromised BTLO](https://github.com/esolanoc/BTLO-Completed-Investigations/tree/main/BTLO%20Labs%20Walktroughs/Network%20Analysis%20Malware%20Compromised%20BTLO)
 - [Piggy BTLO](./SecOps/Piggy.md)
 - [Vortex BTLO](./SecOps/Vortex.md)
 
-# 🚨 Incident Response
+## 🚨 Incident Response
 - [RottenCloud BTLO](https://github.com/esolanoc/BTLO-Completed-Investigations/tree/main/BTLO%20Labs%20Walktroughs/Rotten%20Cloud%20BTLO)
 - [Spilled Bucket BTLO](https://github.com/esolanoc/BTLO-Completed-Investigations/tree/main/BTLO%20Labs%20Walktroughs/Spilled%20Bucket%20BTLO%20)
 
