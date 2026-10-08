@@ -1,6 +1,76 @@
 # Summary
 Zeta-9 Corporation operates a hybrid cloud infrastructure supporting its Quantum Research Division, where highly sensitive data is stored across secure cloud environments. Authorized personnel access this data through a web-based research portal that serves as the primary interface for ongoing projects. Following the breach, C.R.I.S.I.S must extend their investigation into Zeta-9’s cloud environment — analyzing activity, identifying signs of lateral movement, and determining whether the threat actor has already pivoted into the cloud infrastructure. Time is critical; stopping them before they move deeper into the network may be the only way to contain the damage.
 
+---
+
+# Executive Summary
+
+Zeta-9 Corporation, operator of a hybrid cloud infrastructure for its Quantum Research Division, experienced a targeted breach against its AWS and Azure environments.  
+The adversary exploited misconfigurations and vulnerabilities to move laterally, exfiltrate sensitive data, and deface internal web portals.  
+The investigation leveraged **Splunk** and multiple log sources (CloudTrail, AppServiceHTTPLogs, StorageBlobLogs) to reconstruct the attack chain and identify Indicators of Compromise 
+
+---
+
+# Investigation Walkthrough:
+
+Initial Access – AWS:
+- CloudTrail revealed the attacker’s IP in `sourceIPAddress`.  
+- Reconnaissance of EC2 instances via `DescribeInstances`.  
+- Attempt to retrieve Windows instance password using `GetSecretValue`.  
+
+Data Exfiltration:
+- `GetObject` requests showed 3 S3 buckets compromised.  
+- A total of 5 files were downloaded.  
+
+Lateral Movement:
+- Compromised EC2 browsing history revealed a secret portal URL (`AppServiceHTTPLogs`).  
+- Pivot to Azure environment using a malicious encoded PowerShell command.  
+
+Azure Compromise:
+- **StorageBlobLogs** showed `ListContainers` activity.  
+- Sensitive container identified (`quantum-data-container`).  
+- Multiple blobs successfully downloaded.  
+
+Website Defacement:
+- `AppServiceLogs` revealed attacker-modified `CsUriQuery`.  
+- Internal portal defaced with malicious content hosted at attacker-controlled URL.  
+
+---
+
+#  Recommendations:
+
+- **Cloud Security Posture Management (CSPM):** Detect and remediate misconfigurations across AWS/Azure.  
+- **IAM Hardening:** Enforce MFA, rotate keys, and apply least privilege policies.  
+- **Monitoring & Detection:** Enable **AWS GuardDuty** and **Azure Security Center**; integrate with SIEM for correlation.  
+- **Segregation of Environments:** Isolate sensitive research workloads from production.  
+- **Incident Response Playbook:** Establish procedures for hybrid cloud breaches.  
+- **Web Security Controls:** Deploy WAF and integrity monitoring for internal portals.  
+
+---
+
+# Impacts:
+
+- Exfiltration of sensitive research data from AWS S3 and Azure Blob containers.  
+- Credential theft via AWS Secrets Manager.  
+- Lateral movement across cloud environments.  
+- Defacement of internal research portal.  
+
+---
+
+# Indicators of Compromise (IOCs):
+
+| Type              | Value/Description |
+|-------------------|------------------|
+| Attacker IP (AWS) | `X.X.X.X` (CloudTrail) |
+| Recon API         | `DescribeInstances` |
+| Secret Access     | `GetSecretValue` → SecretID containing Windows password |
+| S3 Buckets        | 3 compromised buckets |
+| S3 Files          | 5 objects downloaded |
+| Portal URL        | `research-portal.zeta9.internal` |
+| Pivot Command     | `cmd /c powershell -EncodedCommand ...` |
+| Azure Container   | `quantum-data-container` |
+| Azure Downloads   | Multiple blobs retrieved |
+| Defaced Site URL  | `portal.zeta9.com/index_defaced` |
 
 ---
 
